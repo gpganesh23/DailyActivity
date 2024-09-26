@@ -1,0 +1,67 @@
+public class Main
+{
+	public static void main(String[] args) {
+		int[] arr={5,2,9,3,4,5,6};
+		int n=arr.length;
+		int ans=0;
+		for(int i=0;i<n;i++){
+		    for(int j=i;j<n;j++){
+		        int temp=0;
+		        for(int k=i;k<=j;k++){
+		            if((j-i)==2){
+		                temp+=arr[k];
+		            }
+		        }
+		        ans=Math.max(ans,temp);
+		    }
+		}
+		 System.out.println(ans);
+	}
+}
+
+
+
+
+Sub Strings
+public class Main
+{
+	public static void main(String[] args) {
+		String arr="ganesh";
+		int n=arr.length();
+		int ans=0;
+		int sl=3;
+		for(int i=0;i<n-sl+1;i++){
+		    int j=i+2;
+		    int temp=0;
+		    for(int k=i;k<=j;k++){
+		        System.out.print(arr.charAt(k));
+		        temp+=(int)arr.charAt(k);
+		    }
+		    System.out.println();
+		    ans=Math.max(ans,temp);
+}
+System.out.println(ans);
+}
+}
+
+
+
+Sub Array
+public class Main
+{
+	public static void main(String[] args) {
+		int[] arr={5,2,9,3,4,5,16};
+		int n=arr.length;
+		int ans=0;
+		int sl=3;
+		for(int i=0;i<n-sl+1;i++){
+		    int j=i+2;
+		    int temp=0;
+		    for(int k=i;k<=j;k++){
+		        temp+=arr[k];
+		    }
+		    ans=Math.max(ans,temp);
+}
+System.out.println(ans);
+}
+}
