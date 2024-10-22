@@ -1,0 +1,26 @@
+class Solution {
+    public int nonEmpty(int[] nums, int goal) {
+        int l=0;
+        int ans=0;
+        int temp=0;
+        if(goal<0){
+            return 0;
+        }
+        for(int r=0;r<nums.length;r++){
+            if(nums[r]==1){
+              temp++;
+            }
+            while(temp>goal){
+                if(nums[l]==1){
+                    temp--;
+                }
+                l++;
+            }
+            ans+=(r-l+1);
+        }
+    return ans;
+    }
+ public int numSubarraysWithSum(int[] nums, int goal) {
+    return nonEmpty(nums,goal)-nonEmpty(nums,goal-1);
+ }
+}
