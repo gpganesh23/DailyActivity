@@ -1,0 +1,20 @@
+class Solution {
+    public int reverse(int x) {
+        String str=String.valueOf(x);
+        int n=0;
+        StringBuilder sb=new StringBuilder();
+        if(str.charAt(0)=='-'){
+            sb.append('-');
+             n=1;
+        }
+            for(int i=str.length()-1;i>=n;i--){
+                sb.append(str.charAt(i));
+            }
+            try{
+            return Integer.parseInt(sb.toString());
+            }
+            catch(Exception e){
+                return 0;
+            }
+    }
+}
