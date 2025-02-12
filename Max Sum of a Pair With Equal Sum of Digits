@@ -1,0 +1,28 @@
+class Solution {
+    public int maximumSum(int[] nums) {
+      
+        int result=-1;
+        HashMap<Integer,Integer> hm=new HashMap<>();
+        for(int i=0;i<nums.length;i++){
+            int numsum=length(nums[i]);
+            if(hm.containsKey(numsum)){
+                result = Math.max(result, hm.get(numsum) + nums[i]);
+                hm.put(numsum, Math.max(hm.get(numsum), nums[i]));
+                
+            }
+            else{
+                hm.put(numsum,nums[i]);
+            }
+        }
+        return result;
+    }
+      public int length(int num){
+            int sum=0;
+            while(num!=0){
+                int rem=num%10;
+                sum+=rem;
+                num=num/10;
+            }
+            return sum;
+        }
+}
